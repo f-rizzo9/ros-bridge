@@ -1,12 +1,12 @@
-ARG CARLA_VERSION
-ARG ROS_DISTRO
+ARG CARLA_VERSION=0.9.13
+ARG ROS_DISTRO=noetic
 
 FROM carlasim/carla:$CARLA_VERSION as carla
 
 FROM ros:$ROS_DISTRO-ros-base
 
-ARG CARLA_VERSION
-ARG ROS_DISTRO
+ARG CARLA_VERSION=0.9.13
+ARG ROS_DISTRO=noetic
 
 ENV CARLA_VERSION=$CARLA_VERSION
 ENV DEBIAN_FRONTEND=noninteractive
@@ -30,3 +30,6 @@ RUN /bin/bash -c 'source /opt/ros/$ROS_DISTRO/setup.bash; \
 
 # replace entrypoint
 COPY ./docker/content/ros_entrypoint.sh /
+
+RUN echo 'source /opt/ros/noetic/setup.bash' >> ~/.bashrc
+RUN echo 'source ./devel/setup.bash' >> ~/.bashrc
