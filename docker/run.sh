@@ -38,4 +38,7 @@ docker run \
     --net=host \
 	--name gruppo1-ros-bridge-container \
 	-e DISPLAY \
+	-v /tmp/.X11-unix/:/tmp/.X11-unix \
+	-v ~/.Xauthority:/root/.Xauthority \
+	-e XAUTHORITY=/root/.Xauthority \
     "$DOCKER_IMAGE_NAME:$TAG" "$@"
