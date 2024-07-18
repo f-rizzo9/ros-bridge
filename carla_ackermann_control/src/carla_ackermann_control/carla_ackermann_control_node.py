@@ -13,7 +13,14 @@ Control Carla ego vehicle by using AckermannDrive messages
 import sys
 
 import numpy
+
 from simple_pid import PID  # pylint: disable=import-error,wrong-import-order
+
+# Aggiungi questa riga per importare il modulo PID
+import simple_pid
+
+# Aggiungi questa riga per assegnare il modulo PID a sys.modules
+sys.modules['simple_pid.PID'] = simple_pid
 
 import ros_compatibility as roscomp
 from ros_compatibility.node import CompatibleNode
