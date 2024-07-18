@@ -31,5 +31,11 @@ RUN /bin/bash -c 'source /opt/ros/$ROS_DISTRO/setup.bash; \
 # replace entrypoint
 COPY ./docker/content/ros_entrypoint.sh /
 
+RUN apt-get update && \
+    apt-get install -y nano && \
+    apt-get install -y ros-$ROS_DISTRO-rqt && \
+    apt-get install -y ros-$ROS_DISTRO-rqt-common-plugins && \
+    rm -rf /var/lib/apt/lists/*
+
 RUN echo 'source /opt/ros/noetic/setup.bash' >> ~/.bashrc
 RUN echo 'source ./devel/setup.bash' >> ~/.bashrc
