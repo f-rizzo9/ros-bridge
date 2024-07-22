@@ -15,7 +15,7 @@ do
 done
 
 docker build \
-    -t carla-ros-bridge:$ROS_DISTRO \
+    -t carla-ros-bridge:gruppo1 \
     -f Dockerfile ${SCRIPT_DIR}/.. \
     --build-arg ROS_DISTRO=$ROS_DISTRO \
     --build-arg CARLA_VERSION=$CARLA_VERSION
