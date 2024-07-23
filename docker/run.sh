@@ -40,5 +40,6 @@ docker run \
 	-e DISPLAY \
 	-v /tmp/.X11-unix/:/tmp/.X11-unix \
 	-v ~/.Xauthority:/root/.Xauthority \
+  -v /home/gruppo1/ros-bridge:/opt/carla-ros-bridge \
 	-e XAUTHORITY=/root/.Xauthority \
     "$DOCKER_IMAGE_NAME:$TAG" "$@"
