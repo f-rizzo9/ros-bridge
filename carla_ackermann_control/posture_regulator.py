@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# boh
+
 import rospy
 import numpy as np
 import math
