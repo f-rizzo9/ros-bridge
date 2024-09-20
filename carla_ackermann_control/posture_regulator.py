@@ -93,7 +93,7 @@ def process_point():
         yawd = euler[2]
         rospy.loginfo("Path point: xd=%f, yd=%f, yawd=%f", xd, yd, yawd)
     else:
-        rospy.loginfo("All path points have been processed")
+        rospy.loginfo("All path points have been processed.")
 
 def is_approaching_curve(lookahead=15): # To detect when a vehicle is about to approach a curve (threshold of 0.1 rad, i.e. thresoldR variable at the beginning of the controller's code)
     global current_index, path_points, yaw
